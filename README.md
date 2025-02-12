@@ -10,7 +10,7 @@ Classes Implementadas e implementações futuras
 
 Classe responsável por representar um usuário do sistema.
 
-Atributos:
+#### Atributos:
 
 nome (str): Nome do usuário.
 
@@ -20,7 +20,7 @@ senha (str): Senha do usuário.
 
 tipo (str): Define se o usuário é "cliente" ou "admin".
 
-Métodos:
+#### Métodos:
 
 autenticar(username: str, password: str) -> bool: Verifica se o nome de usuário e a senha fornecidos correspondem aos armazenados. 
 
@@ -28,7 +28,7 @@ autenticar(username: str, password: str) -> bool: Verifica se o nome de usuário
 
 Classe que representa um produto disponível para compra no e-commerce.
 
-Atributos:
+#### Atributos:
 
 id_produto (int): Identificador único do produto. (futura)
 
@@ -38,7 +38,7 @@ preco (float): Preço do produto.
 
 quantidade (int): Quantidade disponível no estoque. (futura)
 
-Métodos:
+#### Métodos:
 
 atualizar_estoque(quantidade: int): Atualiza a quantidade disponível do produto. (futura)
 
@@ -48,11 +48,11 @@ exibir_info() -> str: Retorna uma string formatada com as informações do produ
 
 Classe que representa o carrinho de compras de um usuário.
 
-Atributos:
+#### Atributos:
 
 itens (dict): Dicionário que armazena os produtos e suas respectivas quantidades.
 
-Métodos:
+#### Métodos:
 
 adicionar_produto(produto: Produto, quantidade: int): Adiciona um produto ao carrinho.
 
@@ -66,13 +66,13 @@ exibir_carrinho() -> str: Retorna uma string com os produtos e preços no carrin
 
 Classe específica para administração do sistema.
 
-Atributos:
+#### Atributos:
 
 usuario (Usuário): Instância do usuário com permissão de administrador.
 
 produtos (list): Lista de produtos disponíveis no sistema.
 
-Métodos:
+#### Métodos:
 
 adicionar_produto(produto: Produto): Adiciona um novo produto ao sistema.
 
