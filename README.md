@@ -84,7 +84,7 @@ listar_produtos() -> str: Lista todos os produtos disponíveis no sistema.
 
 ### Autenticação
 
-Os usuários devem autenticar-se com email e senha para acessar funcionalidades específicas.
+Os usuários devem autenticar-se com login e senha para acessar funcionalidades específicas.
 
 ### Adicionar Produtos ao Carrinho
 
