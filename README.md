@@ -1,6 +1,6 @@
 # E-Commerce-System-Project-Software-V2
 
-##Visão Geral
+## Visão Geral
 
 Este projeto é um sistema de e-commerce desenvolvido em Python utilizando Programação Orientada a Objetos (POO) e modularização. O sistema permite que usuários autentiquem-se, adicionem produtos ao carrinho e façam compras. Além disso, há um painel administrativo para gerenciamento de produtos.
 
