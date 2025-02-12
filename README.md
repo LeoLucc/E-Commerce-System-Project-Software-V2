@@ -6,7 +6,7 @@ Este projeto é um sistema de e-commerce desenvolvido em Python utilizando Progr
 
 Classes Implementadas e implementações futuras
 
-1. Usuário
+### 1. Usuário
 
 Classe responsável por representar um usuário do sistema.
 
@@ -24,7 +24,7 @@ Métodos:
 
 autenticar(username: str, password: str) -> bool: Verifica se o nome de usuário e a senha fornecidos correspondem aos armazenados. 
 
-2. Produto
+### 2. Produto
 
 Classe que representa um produto disponível para compra no e-commerce.
 
@@ -44,7 +44,7 @@ atualizar_estoque(quantidade: int): Atualiza a quantidade disponível do produto
 
 exibir_info() -> str: Retorna uma string formatada com as informações do produto. (futura)
 
-3. Carrinho
+### 3. Carrinho
 
 Classe que representa o carrinho de compras de um usuário.
 
@@ -62,7 +62,7 @@ calcular_total() -> float: Retorna o valor total da compra.
 
 exibir_carrinho() -> str: Retorna uma string com os produtos e preços no carrinho.
 
-4. Admin (futura)
+### 4. Admin (futura)
 
 Classe específica para administração do sistema.
 
