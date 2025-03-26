@@ -1,96 +1,80 @@
-# E-Commerce-System-Project-Software-V2
+# E-Commerce-System---Software-Project-V2
 
-## Visão Geral
+## Descrição
+Este projeto é um sistema de e-commerce desenvolvido em Python utilizando Programação Orientada a Objetos (POO). Este sistema permite que administradores adicionem, editem e removam produtos, enquanto clientes podem visualizar, adicionar ao carrinho e comprar produtos. O sistema utiliza um mecanismo de autenticação simples e um menu interativo baseado em terminal.
 
-Este projeto é um sistema de e-commerce desenvolvido em Python utilizando Programação Orientada a Objetos (POO) e modularização. O sistema permite que usuários autentiquem-se, adicionem produtos ao carrinho e façam compras. Além disso, há um painel administrativo para gerenciamento de produtos.
 
-Classes Implementadas e implementações futuras
+## Funções não implementadas
+Compra à distância e rastreamento do pedido, descontos/promoções e um sistema de avaliação/reclamação dos produtos.
 
-### 1. Usuário
+## Classes e Variáveis Principais
 
-Classe responsável por representar um usuário do sistema.
-
-#### Atributos:
-
-nome (str): Nome do usuário.
-
-email (str): Endereço de e-mail do usuário. (futura)
-
-senha (str): Senha do usuário.
-
-tipo (str): Define se o usuário é "cliente" ou "admin".
-
-#### Métodos:
-
-autenticar(username: str, password: str) -> bool: Verifica se o nome de usuário e a senha fornecidos correspondem aos armazenados. 
-
-### 2. Produto
-
-Classe que representa um produto disponível para compra no e-commerce.
+### Classe `Usuario`
+Classe abstrata que representa um usuário do sistema.
 
 #### Atributos:
-
-id_produto (int): Identificador único do produto. (futura)
-
-nome (str): Nome do produto.
-
-preco (float): Preço do produto.
-
-quantidade (int): Quantidade disponível no estoque. (futura)
+- `usuario`: Nome de usuário.
+- `senha`: Senha do usuário.
 
 #### Métodos:
+- `autenticar(usuario, senha)`: Verifica se as credenciais fornecidas correspondem às do usuário.
+- `menu()`: Método abstrato que deve ser implementado pelas classes filhas.
 
-atualizar_estoque(quantidade: int): Atualiza a quantidade disponível do produto. (futura)
+### Classe `Administrador` (Herda de `Usuario`)
+Usuário com permissão para gerenciar produtos.
 
-exibir_info() -> str: Retorna uma string formatada com as informações do produto. (futura)
+#### Métodos:
+- `menu()`: Exibe o menu de administração com as opções:
+  - Adicionar Produto
+  - Editar Produto
+  - Remover Produto
+  - Logout
+  
+- `adicionar_produto(nome, preco)`: Adiciona um novo produto à lista de produtos.
+- `editar_produto(nome_antigo, nome_novo, preco_novo)`: Edita um produto existente.
+- `remover_produto(nome)`: Remove um produto da lista.
 
-### 3. Carrinho
-
-Classe que representa o carrinho de compras de um usuário.
+### Classe `Cliente` (Herda de `Usuario`)
+Usuário que pode comprar produtos e gerenciar um carrinho de compras.
 
 #### Atributos:
-
-itens (dict): Dicionário que armazena os produtos e suas respectivas quantidades.
-
-#### Métodos:
-
-adicionar_produto(produto: Produto, quantidade: int): Adiciona um produto ao carrinho.
-
-remover_produto(produto: Produto): Remove um produto do carrinho.
-
-calcular_total() -> float: Retorna o valor total da compra.
-
-exibir_carrinho() -> str: Retorna uma string com os produtos e preços no carrinho.
-
-### 4. Admin (futura)
-
-Classe específica para administração do sistema.
-
-#### Atributos:
-
-usuario (Usuário): Instância do usuário com permissão de administrador.
-
-produtos (list): Lista de produtos disponíveis no sistema.
+- `carrinho`: Lista de produtos adicionados para compra.
 
 #### Métodos:
+- `menu()`: Exibe o menu do cliente com opções para:
+  - Ver produtos
+  - Comprar ou adicionar produtos ao carrinho
+  - Gerenciar carrinho
+  - Logout
+  
+- `adicionar_ao_carrinho(nome)`: Adiciona um produto ao carrinho.
+- `remover_do_carrinho(nome)`: Remove um item do carrinho.
+- `finalizar_compra()`: Processa a compra dos itens no carrinho.
 
-adicionar_produto(produto: Produto): Adiciona um novo produto ao sistema.
+## Listas Globais
+- `admins`: Lista contendo os administradores do sistema.
+- `users`: Lista de clientes cadastrados.
+- `products`: Lista de dicionários representando os produtos disponíveis, com `nome` e `preco`.
 
-remover_produto(id_produto: int): Remove um produto do sistema pelo seu ID.
+## Funções Auxiliares
+- `show_products()`: Exibe os produtos disponíveis.
+- `selecionar_metodo_pagamento()`: Solicita ao usuário a escolha de um método de pagamento.
+- `comprar_ou_adicionar(cart)`: Permite que o cliente compre ou adicione produtos ao carrinho.
+- `gerenciar_carrinho(cart)`: Exibe opções para visualizar, remover ou comprar itens do carrinho.
+- `view_cart(cart)`: Exibe o conteúdo do carrinho do cliente.
+- `remover_item(cart)`: Permite remover um item específico do carrinho.
+- `comprar_item_especifico(cart)`: Compra um item específico do carrinho.
+- `comprar_todos_os_itens(cart)`: Compra todos os itens do carrinho.
+- `login()`: Permite que administradores e clientes façam login.
+- `cadastrar_usuario()`: Cadastra um novo cliente.
 
-listar_produtos() -> str: Lista todos os produtos disponíveis no sistema.
+## Fluxo do Programa
+1. O sistema exibe um menu principal com opções para login, cadastro de usuário ou saída.
+2. Usuários fazem login e acessam seus respectivos menus.
+3. Administradores podem gerenciar produtos.
+4. Clientes podem visualizar produtos, gerenciar carrinho e realizar compras.
+5. O sistema mantém a execução até que o usuário escolha sair.
 
-## Como Usar
-
-### Autenticação
-
-Os usuários devem autenticar-se com login e senha para acessar funcionalidades específicas.
-
-### Adicionar Produtos ao Carrinho
-
-Após a autenticação, os clientes podem adicionar produtos ao carrinho e visualizar o total da compra.
-
-### Painel Administrativo
-
-Usuários com permissão de administrador podem adicionar e remover produtos do sistema.
+## Execução
+Basta rodar o script em um ambiente Python (versão 3+). O sistema interage via terminal e não requer bibliotecas externas.
 
